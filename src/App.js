@@ -22,10 +22,10 @@ const App = () => {
     });
   }, []);
 
-  const addTodo = (e) => {
+  const addTodo = async (e) => {
     e.preventDefault();
     if (todos.length === 0) {
-      todosRef.push().set({
+      await todosRef.push().set({
         id: 1,
         input,
         isComplete: false,
@@ -35,7 +35,7 @@ const App = () => {
         return prev.id > current.id ? prev : current;
       });
       const id = currentMaxIdTodo.id + 1 + Math.floor(Math.random() * 100);
-      todosRef.push().set({
+      await todosRef.push().set({
         id,
         input,
         isComplete: false,
@@ -45,9 +45,9 @@ const App = () => {
     setInput("");
   };
 
-  const deleteTodo = (e) => {
+  const deleteTodo = async (e) => {
     const id = parseInt(e.target.id);
-    todosRef
+    await todosRef
       .orderByChild("id")
       .equalTo(id)
       .once("value", (snap) => {
@@ -57,9 +57,9 @@ const App = () => {
       });
   };
 
-  const checkHandler = (e) => {
+  const checkHandler = async (e) => {
     const id = parseInt(e.target.id);
-    todosRef
+    await todosRef
       .orderByChild("id")
       .equalTo(id)
       .once("value", (snap) => {
@@ -67,7 +67,6 @@ const App = () => {
         snap.forEach((s) => {
           const isFalse = s.val().isComplete;
           updates[s.key] = { ...s.val(), isComplete: !isFalse };
-          console.log((updates[s.key] = { ...s.val(), isComplete: !isFalse }));
         });
         todosRef.update(updates);
       });
