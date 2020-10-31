@@ -7,6 +7,57 @@
   pointer-events: none;
 }
 
+.todo_lists {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.lists {
+  width: 100%;
+}
+
+#list__item {
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+}
+.incomplete {
+  color: #000;
+}
+
+.completed {
+  color: red;
+  text-decoration: line-through;
+}
+
+.check_box {
+  width: 20px;
+  height: 25px;
+  padding: 1em;
+  margin: 0.5em 1em 0.5em 0.5em;
+}
+
+.delete {
+  color: #fff;
+  border-radius: 30%;
+  outline: none;
+  padding: 0.5em 0.8em;
+  background-color: rgb(255, 84, 84);
+  -webkit-box-shadow: 0 5px 0 rgb(255, 84, 84);
+  box-shadow: 0 3px 0 rgb(138, 2, 2);
+  border: 1px solid rgb(255, 84, 84);
+}
+
+.delete:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  -webkit-box-shadow: 0 2px 0 rgb(255, 84, 84);
+  box-shadow: 0 2px 0 rgb(255, 84, 84);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
