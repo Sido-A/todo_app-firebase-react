@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { List, ListItem, ListItemText } from "@material-ui/core";
 
 const Todo = ({ task, deleteTodo, checkHandler }) => {
@@ -15,10 +15,10 @@ const Todo = ({ task, deleteTodo, checkHandler }) => {
         />
         <input
           id={id}
+          checked={isComplete}
           className="check_box"
           type="checkbox"
           onClick={(e) => checkHandler(e)}
-          defaultChecked={isComplete ? "checked" : null}
         />
 
         <button id={id} className="delete" onClick={(e) => deleteTodo(e)}>
