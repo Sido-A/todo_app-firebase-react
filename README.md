@@ -3,8 +3,9 @@ This site is hosted by Firebase.<br />
 
 [Click here to the app](https://todo-app-react-firebase-520ef.web.app/)
 
-### `npm start`
+### `Functinality`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
+1. Add 'todo'
+2. Delete 'todo'
+3. Strike out 'todo'
+     * Strikethrough the text with a red line
